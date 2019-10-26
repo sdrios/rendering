@@ -1,10 +1,31 @@
 
 function renderStudents(students) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(students)}</code>
-        </div>
-    `
+   var attendance = " "
+   students.forEach(function(student){
+        if (student.isPresent == true){
+           attendance+= `
+            <div class="text-center mt-5">
+               <div class="row present-div">
+                    <span>${student.name}</span>
+                    <p>Present</p> 
+               </div>
+            </div>
+        `
+        }
+        else if (student.isPresent==false){
+            attendance+=  `
+            <div class="text-center mt-5">
+               <div class="row absent-div">
+                    <span>${student.name}</span>
+                    <p>Absent</p> 
+               </div>
+            </div>
+        `
+        }
+   })
+   
+    return attendance;
+  
 }
 
 function students() {

@@ -2,7 +2,7 @@
 function renderRectangle(rectangle) {
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(rectangle)}</code>
+           <div style="width:${rectangle.width}px; height:${rectangle.height}px; background-color:${rectangle.color};"></div> 
         </div>
     `
 }
@@ -17,5 +17,4 @@ function rectangle() {
     }
 
     content.innerHTML = renderRectangle(rectangleAbstraction);
-
 }

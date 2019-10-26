@@ -1,8 +1,23 @@
+function renderMovieData(objects){
+   let movieData= objects.map(function(elements){
+       return `
+       <div style="display:flex;"><img src="${elements.poster}"/>
+        <span>${elements.title}</span>
+        <p>${elements.year}</p>
+       <p> IMDB: <br> ${elements.imdbRating}/10</p>
+       <p> Rotten Tomatoes: ${elements.rottenTomatoesRating}%</p>
+        </div>
+        `
+    })
+
+return movieData
+}
+
 
 function renderMovies(movies) {
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
+            <code>${renderMovieData(movies)}</code>
         </div>
     `
 }

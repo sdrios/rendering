@@ -1,10 +1,15 @@
 
 function renderNametags(nametags) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(nametags)}</code>
-        </div>
-    `
+   var names = ""
+   nametags.forEach(function(name){
+       names+=  `
+       <div class="text-center mt-5">
+          <div class="row student-intro"><p>Hello, my name is:</p></div>
+          <div class="row student-name"><p>${name}</p></div>
+       </div>
+   `
+   }) 
+    return names
 }
 
 function nametags() {
