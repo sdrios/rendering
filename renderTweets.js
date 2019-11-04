@@ -1,8 +1,23 @@
 
 function renderTweets(tweets) {
+         let renderedTweet = []
+        let tweetsRender = tweets.map(function(tweet){   //step through tweet info
+           
+            return renderedTweet += ` <div id=user><h3>${tweet.user.handle}</h3>
+             <span>${tweet.user.isVerified}</span>
+             <p>${tweet.user.username}</p>
+             <img src="${tweet.user.profilePic}"></div>
+             <div id=tweet-info><h1>${tweet.text}</h1>
+               <div class="row> <span>${tweet.likes}</span>
+               <span>${tweet.retweets}</span>
+                <span>${tweet.replies}</span>
+                </div>
+             </div>`
+        })
+
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(tweets)}</code>
+            <code>${tweetsRender}</code>
         </div>
     `
 }
@@ -50,5 +65,6 @@ function tweets() {
     ]
 
     content.innerHTML = renderTweets(tweetsAbstraction);
+    console.log('hi')
 
 }
